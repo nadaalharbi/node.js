@@ -31,9 +31,9 @@ app.get('', (req, res) => {
         return res.send({
             error: 'You must provie an Address.'
         });
-    }    
+    }
 
-    geocode.map(req.query.address, (error, { latitude, longitude, location }= {})=> {
+    geocode.map(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error });
         }

@@ -1,4 +1,3 @@
-//
 // Goal: Create method to get incomplete tasks
 //
 // 1. Define getTasksToDo method
@@ -9,17 +8,17 @@ const tasks = {
     tasks: [{
         text: 'Grocery shopping',
         completed: true
-    },{
+    }, {
         text: 'Clean yard',
         completed: false
     }, {
-            text: 'Film course',
+        text: 'Film course',
         completed: false
     }],
     getTasksToDo() {
         //create new array of incompleted tasks, filter the original array and return only the incompleted ones
-        return this.tasks.filter((task) => task.completed === false)
-     }
+        return this.tasks.filter((task) => task.completed === false);
+    }
 }
 
-console.log(tasks.getTasksToDo())
+console.log(tasks.getTasksToDo());
