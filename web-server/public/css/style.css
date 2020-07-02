@@ -1,0 +1,55 @@
+body {
+font-family: Arial, Helvetica, sans-serif;
+max-width: 650px;
+margin: 0 auto;
+padding: 0px 15px;
+display: flex;
+flex-direction: column;
+min-height: 100vh
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+header {
+font-size: 40px;
+margin-bottom: 45px;
+}
+
+header a {
+    font-size: 25px;
+    color: #888888;
+    margin-right: 15px;
+    text-decoration: none;
+}
+ 
+footer {
+color: honeydew;
+border-top: 1px solid #888888;
+margin-top: 15px;
+padding: 15px 0;
+}
+
+footer p{
+    background-color: cadetblue;
+    color:black;
+    font-size: 15px;
+    margin-top:150px;
+
+}
+
+.portrait {
+    width: 250px;
+}
+
+i {
+     color: green;
+    font-size: 46px; 
+}
+
+
+
+img {
+    width: 250px;
+}
