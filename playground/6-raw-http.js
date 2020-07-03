@@ -22,7 +22,7 @@ request.on('error', (error) => {
 
 request.end();
 
-//-------------------------------------
+//--------------------------------------------
 
 // Create server to print the current date as JSON response
 const server = http.createServer((req, res) => {
