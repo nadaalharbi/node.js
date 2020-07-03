@@ -1,12 +1,14 @@
 const path = require('path');// core module
 const express = require('express');// installed module
-const app = express();
-
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forcast');
-
+const app = express();
 
 const publicDirPath = path.join(__dirname, '../public');
+const port = process.env.PORT || 3000
+
+
+
 // Setup handlerbars(hbs) engine and views
 app.set('view engine', 'hbs');
 // use(): is to customize the server 
@@ -26,14 +28,15 @@ app.get('', (req, res) => {
     });
 });
 
-app.get('', (req, res) => {
+
+app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
             error: 'You must provie an Address.'
         });
     }
 
-    geocode.map(req.query.address, (error, { latitude, longitude, location } = {}) => {
+    geocode.map(req.query.address, (error, { latitude, longitude, location }) => {
         if (error) {
             return res.send({ error });
         }
@@ -62,15 +65,11 @@ app.get('/help-app', (req, res) => {
     res.render('help-app');
 });
 
-app.get('/products', (req, res) => {
-    console.log(req.query.search + ',' + req.query.rating);
-    res.send({
-        products: []
-    });
-});
-
 app.get('*', (req, res) => {
-    res.send('404 page not found.');
+    res.render('404', {
+        title: '404',
+        errorMessage: 'Page not found.'
+    });
 });
 
 //-----------------------------------------
@@ -79,7 +78,7 @@ app.get('*', (req, res) => {
 // Setup Static pages
 //1- Serve up HTML
 app.get('/html', (req, res) => {
-    res.send('<h1>Hellp <b>Express!</b></h1>'); //will be print in the browser
+    res.send('<h1>Hello <b>Express!</b></h1>'); //will be print in the browser
 });
 // 2- Serve up JSON Array of objects
 app.get('/json', (req, res) => {
@@ -100,8 +99,8 @@ app.get('/about', (req, res) => {
 
 /* listen(): It takes two args. The port and a function() that to callback
 */
-const PORT=3000;
 
-app.listen(PORT, () => {
-    console.log(`Server is Up on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is Up on http://localhost:${port}`);
 });
+
