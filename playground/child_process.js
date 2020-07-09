@@ -2,6 +2,7 @@ const { spawn, exec, fork } = require('child_process');
 const { stdout } = require('process');
 
 //SPAWN()
+//use spawn() with a command-line bash to print since when my machine has been working
 const bash = spawn('bash');
 // register a handler to listen to write event on the child
 bash.stdout.on('data', (data) => {
