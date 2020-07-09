@@ -19,7 +19,7 @@ fs.writeFileSync("1-json.json",bookJSON)
 //1- Read it and strore it
 //2- Convert it from Binary to String
 //3- Parse it using JSON (from json Object to string)
-const dataBuffer = fs.readFileSync("1-json.json")
+const dataBuffer = fs.readFileSync("json.json")
 const dataJSON = dataBuffer.toString()
 const data = JSON.parse(dataJSON)
 console.log(data.title+" , "+data.author)

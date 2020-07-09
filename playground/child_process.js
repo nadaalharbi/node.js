@@ -23,7 +23,7 @@ setTimeout(() => {
 
 // FORK()
 // Send a communication message from child and parent process 
-const forked = fork('playground/parent.js');
+const forked = fork(__dirname+'/parent.js');
 forked.on('message', message => {
     console.log('message from child:', message);
     forked.send('Hi');
@@ -42,7 +42,7 @@ exec('find . -type f | wc -l -w', (error, stdout, stderr) => {
         console.error(`Error: ${stderr}`);
         return;
     }
-    console.log(`Number of lines and word: ${stdout}`);
+    console.log(`Number of lines and words: ${stdout}`);
 });
 
 //use exec() with command ls -a to list the hidden files in this working dir.
@@ -50,5 +50,5 @@ exec('ls -f', (error, stdout, stderr)=>{
     if (error){
         return console.log(error);
     }
-    console.log(`All files in this working directory including the hidden ones: ${stdout}`);
+    console.log(`All files in this working directory including the hidden ones: \n ${stdout}`);
 });

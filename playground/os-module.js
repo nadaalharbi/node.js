@@ -2,6 +2,7 @@ const os = require('os'); //core module
   
 // Returns the cpu architecture 
 console.log(`CPU architecture: ${os.arch()}`); 
+console.log(`CPUs length ${os.cpus().length}`); 
   
 // Returns the amount of free system memory in bytes 
 console.log(`Free memory: ${os.freemem()}`); 
