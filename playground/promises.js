@@ -33,7 +33,6 @@ add(1, 1).then((sum) => {
 
 
 
-
 //-------------------------------------
 // Using callback
 const doCallback = (callback) => {

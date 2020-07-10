@@ -1,7 +1,10 @@
 const http = require('http')
-const port = process.env.PORT || 3000;
+const path = require('path');
+require('dotenv').config({path: './config.env'});   // loads configuration variables
+const port = process.env.PORT;
+console.log(port)
 
-// Creates an Http GET request to static url, to GET the text then print it in terminal
+// Creates an http GET request to static url, to GET the text then print it in terminal
 const options = {
     hostname: 'webcode.me',
     port: 80,

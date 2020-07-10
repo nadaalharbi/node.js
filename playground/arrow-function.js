@@ -16,20 +16,20 @@ const event = {
     guestList: ['Reem', 'Nada'],
 
     printGuestList: function () {
-        console.log('Guest List for ' + this.name)
+        console.log(`Guest List for  ${this.name}`)
         //to print each guest, function is called for each index
         this.guestList.forEach((guest) => {
-            console.log(guest + ' is attending ' + this.name);
+            console.log(`${guest} is attending ${this.name}`);
 
         });
     },
     printGuestList2: () => {
-        console.log(`Guest List for ${this.name}`);
+        console.log(`Guest List for ${event.name}`);
     },
-    printGuestList3: () => console.log(`Guest List for ${this.name}`)
+    printGuestList3: () => console.log(`Guest List for ${event.name}`)
     ,
     printGuestList4() {
-        console.log(`Guest List for ${this.name}`);
+        console.log(`Guest List for ${event.name}`);
     }
 }
 

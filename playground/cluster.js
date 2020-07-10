@@ -2,9 +2,7 @@ const cluster = require('cluster');
 const http = require('http');
 const app = require('express')();
 const os = require('os');
-const port = process.env.PORT || 3000
-
-
+const port = process.env.PORT;
 
 
 //using Cluster module with simple http server
@@ -28,8 +26,8 @@ if (cluster.isMaster) {
         console.log('Starting a new worker');
         cluster.fork();
     });
+    
 } else {
-
     app.server = http.createServer((req, res) => {
         const processIDMsg = `process ${process.pid} says hello!`;
         console.log(processIDMsg);

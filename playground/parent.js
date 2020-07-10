@@ -1,7 +1,7 @@
 //Parent file 
 
 if (process.send) {
-  process.send("Hello");
+  process.send("Hello my parent");
 }
 
 process.on('message', message => {
